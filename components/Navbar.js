@@ -1,33 +1,44 @@
+'use client'
 import Link from "next/link"
+import { Sheet, SheetTrigger, SheetContent, SheetClose, SheetDescription, SheetFooter, SheetHeader, SheetTitle } from "./ui/sheet"
+import { Button } from "./ui/button"
 
 export default function Navbar() {
-  return (
-    <header className="flex h-16 items-center justify-between px-4 md:px-6">
+    
+    function handleClick() {
+        alert('You clicked me!');
+      }
+  
+    return (
+    <div className="sticky top-0 z-10 flex h-16 items-center justify-between bg-white dark:bg-black px-4 md:px-6">
         <Link href="/" className="flex items-center gap-2">
           <img src="/images/me.jpg" alt="Kwame Trancoso" className="w-8 h-8 rounded-full" />
           <span className="text-lg font-semibold">Kwame Trancoso</span>
         </Link>
       <div className="hidden md:flex gap-4">
-        <Link className="text-sm font-medium hover:underline underline-offset-4" href="#">
+        <Link className="text-sm font-medium hover:underline decoration-lime-500 underline-offset-4" href="#">
           Home
         </Link>
-        <Link className="text-sm font-medium hover:underline underline-offset-4" href="#">
+        <Link className="text-sm font-medium hover:underline decoration-lime-500 underline-offset-4" href="#">
           About
         </Link>
-        <Link className="text-sm font-medium hover:underline underline-offset-4" href="#">
+        <Link className="text-sm font-medium hover:underline decoration-lime-500  underline-offset-4" href="#">
           Experience
         </Link>
-        <Link className="text-sm font-medium hover:underline underline-offset-4" href="#">
+        <Link className="text-sm font-medium hover:underline decoration-lime-500 underline-offset-4" href="#">
           Education
         </Link>
-        <Link className="text-sm font-medium hover:underline underline-offset-4" href="#">
+        <Link className="text-sm font-medium hover:underline decoration-lime-500 underline-offset-4" href="#">
           Skills
         </Link>
-        <Link className="text-sm font-medium hover:underline underline-offset-4" href="#">
+        <Link className="text-sm font-medium hover:underline decoration-lime-500 underline-offset-4" href="#">
           Contact
         </Link>
       </div>
-    </header>
+        <div className="flex items-center gap-4">
+            <Button className="hidden md:block text-white bg-black ring-1  ring-lime-500 transition ease-in-out delay-150  hover:-translate-y-1 hover:bg-lime-500 hover:scale-100 duration-300" onClick={handleClick}>Resume</Button>
+        </div>
+    </div>
   )
 }
 
